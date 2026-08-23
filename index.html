@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="ClayMint Atelier — học viện giáo dục vui nhộn kết hợp phòng trưng bày NFT tối giản, Windows 95, TUI, trashy web và scribble UI."
+    />
+    <title>ClayMint Atelier — Học viện NFT nguệch ngoạc</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Kalam:wght@700&family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
+
+    <div class="desktop-icons" aria-hidden="true">
+      <button class="desktop-icon" type="button" data-open-window="progress">
+        <span class="desktop-icon__glyph"></span>
+        <span>My Progress</span>
+      </button>
+      <button class="desktop-icon" type="button" data-open-window="recycle">
+        <span class="desktop-icon__glyph desktop-icon__glyph--trash"></span>
+        <span>Recycle</span>
+      </button>
+      <button class="desktop-icon" type="button" data-scroll="#mint">
+        <span class="desktop-icon__glyph desktop-icon__glyph--term"></span>
+        <span>mint.sh</span>
+      </button>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span class="brand__clay">ClayMint</span>
+        <span class="brand__serif">Atelier</span>
+      </a>
+      <nav class="clay-nav" aria-label="Mục chính">
+        <a href="#courses">Khóa học</a>
+        <a href="#exhibition">Triển lãm</a>
+        <a href="#artists">Nghệ sĩ</a>
+        <a href="#progress">Tiến độ</a>
+        <a href="#mint">Mint</a>
+        <a href="#enroll">Ghi danh</a>
+      </nav>
+      <a class="clay-btn clay-btn--accent" href="#enroll">Học miễn phí</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero__blobs" aria-hidden="true"></div>
+        <p class="hero__kicker">New: AI-Powered Learning × Current Exhibition</p>
+        <h1>
+          Học bất cứ lúc nào.
+          <em>Mint bất cứ thứ gì.</em>
+        </h1>
+        <p class="hero__lede">
+          Nền tảng giáo dục claymorphism gặp phòng tranh NFT tối giản — rồi
+          vô tình mở nhầm Windows 95, terminal mint, guestbook 1998 và sổ
+          phác thảo nguệch ngoạc.
+        </p>
+        <div class="hero__actions">
+          <a class="clay-btn clay-btn--primary" href="#courses">Xem khóa học</a>
+          <a class="ghost-btn" href="#exhibition">Vào triển lãm</a>
+        </div>
+        <ul class="hero__stats">
+          <li><strong>10K+</strong> khóa học</li>
+          <li><strong>2M+</strong> học viên</li>
+          <li><strong>42</strong> tác phẩm đang mint</li>
+          <li><strong>95</strong> cửa sổ chưa đóng</li>
+        </ul>
+      </section>
+
+      <section class="courses" id="courses">
+        <header class="section-head">
+          <p class="eyebrow">Popular Courses</p>
+          <h2>Catalog clay — bóp vào là học</h2>
+          <p>Thẻ 3D mềm, viền dày, bóng đôi. Đúng bài claymorphism cho giáo dục.</p>
+        </header>
+        <div class="course-grid">
+          <article class="clay-card">
+            <div class="clay-card__art clay-card__art--code" aria-hidden="true"></div>
+            <p class="clay-card__meta">48 bài · 24h · 12.5K</p>
+            <h3>Web Development Bootcamp</h3>
+            <p>Sarah Chen dạy bạn dựng trang này mà không cần Clippy.</p>
+            <div class="clay-card__foot">
+              <span class="stars" aria-label="4.9 trên 5">4.9</span>
+              <button class="clay-btn clay-btn--small" type="button" data-enroll="web">Tiếp tục học</button>
+            </div>
+            <label class="sr-only" for="progress-web">Tiến độ Web</label>
+            <progress id="progress-web" max="100" value="65">65%</progress>
+          </article>
+          <article class="clay-card">
+            <div class="clay-card__art clay-card__art--ux" aria-hidden="true"></div>
+            <p class="clay-card__meta">36 bài · 18h · 8.2K</p>
+            <h3>UI/UX Design Mastery</h3>
+            <p>Mike Johnson: 79 style searchable. Đừng dùng AI purple.</p>
+            <div class="clay-card__foot">
+              <span class="stars" aria-label="4.8 trên 5">4.8</span>
+              <button class="clay-btn clay-btn--small" type="button" data-enroll="ux">Xem giáo trình</button>
+            </div>
+            <progress max="100" value="42">42%</progress>
+          </article>
+          <article class="clay-card">
+            <div class="clay-card__art clay-card__art--nft" aria-hidden="true"></div>
+            <p class="clay-card__meta">52 bài · 30h · 15.3K</p>
+            <h3>NFT Curation 101</h3>
+            <p>Emily Davis: Digital Renaissance, không phải JPEG cá vàng.</p>
+            <div class="clay-card__foot">
+              <span class="stars" aria-label="4.9 trên 5">4.9</span>
+              <button class="clay-btn clay-btn--small" type="button" data-enroll="nft">Vào studio</button>
+            </div>
+            <progress max="100" value="18">18%</progress>
+          </article>
+          <article class="clay-card">
+            <div class="clay-card__art clay-card__art--cli" aria-hidden="true"></div>
+            <p class="clay-card__meta">42 bài · 22h · 9.8K</p>
+            <h3>Terminal Aesthetics</h3>
+            <p>Alex Kim: mint bằng CLI, đọc log như thơ.</p>
+            <div class="clay-card__foot">
+              <span class="stars" aria-label="4.7 trên 5">4.7</span>
+              <button class="clay-btn clay-btn--small" type="button" data-enroll="cli">Mở shell</button>
+            </div>
+            <progress max="100" value="91">91%</progress>
+          </article>
+        </div>
+      </section>
+
+      <section class="exhibition" id="exhibition">
+        <p class="exhibition__label">Current Exhibition</p>
+        <h2>Digital Renaissance</h2>
+        <p class="exhibition__dek">
+          Bộ sưu tập chọn lọc về giao thoa công nghệ và biểu đạt. Tối giản,
+          nhiều khoảng thở, nghệ thuật đứng trước UI.
+        </p>
+        <div class="exhibition__hero-piece" aria-hidden="true">
+          <div class="nft-canvas nft-canvas--ethereal"></div>
+        </div>
+        <p class="exhibition__caption">
+          Featured · <em>Ethereal Landscapes</em> · Marina Chen · Reserve 15 ETH
+        </p>
+        <div class="collection">
+          <header class="collection__head">
+            <h3>Available Works</h3>
+            <a class="text-link" href="#mint">Mint từ terminal</a>
+          </header>
+          <ul class="collection__grid">
+            <li>
+              <figure>
+                <div class="nft-canvas nft-canvas--solitude" aria-hidden="true"></div>
+                <figcaption>
+                  <strong>Solitude</strong>
+                  <span>Marina Chen · 8.5 ETH</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="nft-canvas nft-canvas--urban" aria-hidden="true"></div>
+                <figcaption>
+                  <strong>Urban Dreams</strong>
+                  <span>James Wright · 5.2 ETH</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="nft-canvas nft-canvas--meta" aria-hidden="true"></div>
+                <figcaption>
+                  <strong>Metamorphosis</strong>
+                  <span>Sofia Laurent · 12 ETH</span>
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="nft-canvas nft-canvas--bloom" aria-hidden="true"></div>
+                <figcaption>
+                  <strong>Digital Bloom</strong>
+                  <span>Alex Kim · 6.8 ETH</span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sketch" id="artists">
+        <svg class="sketch__scribble" aria-hidden="true" viewBox="0 0 200 40">
+          <path d="M4 28 C 40 4, 80 36, 120 12 S 180 32, 196 10" fill="none" stroke="#ff4d4d" stroke-width="3" />
+        </svg>
+        <p class="sketch__label">// nghệ sĩ được dán băng keo</p>
+        <h2>Curated creators (vẽ nguệch)</h2>
+        <div class="sketch-grid">
+          <article class="sketch-card sketch-card--a">
+            <div class="tape" aria-hidden="true"></div>
+            <div class="avatar-doodle" aria-hidden="true">MC</div>
+            <h3>Marina Chen</h3>
+            <p>24 works · landscape mềm như đất sét</p>
+            <p class="note">đừng xóa nét chì này !!</p>
+          </article>
+          <article class="sketch-card sketch-card--b">
+            <div class="tape tape--blue" aria-hidden="true"></div>
+            <div class="avatar-doodle" aria-hidden="true">JW</div>
+            <h3>James Wright</h3>
+            <p>18 works · city glitch, vẫn thanh lịch</p>
+          </article>
+          <article class="sketch-card sketch-card--c">
+            <div class="pushpin" aria-hidden="true"></div>
+            <div class="avatar-doodle" aria-hidden="true">SL</div>
+            <h3>Sofia Laurent</h3>
+            <p>32 works · biến hình, mực đỏ</p>
+          </article>
+          <article class="sketch-card sketch-card--d">
+            <div class="tape" aria-hidden="true"></div>
+            <div class="avatar-doodle" aria-hidden="true">AK</div>
+            <h3>Alex Kim</h3>
+            <p>15 works · bloom + CLI poetry</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="win95" id="progress">
+        <h2 class="win95__sr">Progress tracking demo</h2>
+        <div class="win-window" id="window-progress">
+          <div class="win-title">
+            <span>progress.exe — Student Dashboard</span>
+            <div class="win-title__btns">
+              <button type="button" aria-label="Minimize">_</button>
+              <button type="button" aria-label="Maximize">□</button>
+              <button type="button" class="win-title__close" data-close-window aria-label="Đóng">X</button>
+            </div>
+          </div>
+          <menu class="win-menu">
+            <li><u>F</u>ile</li>
+            <li><u>E</u>dit</li>
+            <li><u>V</u>iew</li>
+            <li><u>H</u>elp</li>
+          </menu>
+          <div class="win-body">
+            <p>C:\STUDENTS\YOU\COURSES</p>
+            <ul class="win-progress">
+              <li>
+                <span>WEBBOOT.CAM</span>
+                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" aria-label="Web bootcamp 65%">
+                  <span data-fill="65"></span>
+                </div>
+              </li>
+              <li>
+                <span>UXMASTER.SYS</span>
+                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42" aria-label="UX mastery 42%">
+                  <span data-fill="42"></span>
+                </div>
+              </li>
+              <li>
+                <span>NFT101.EXE</span>
+                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18" aria-label="NFT 101 18%">
+                  <span data-fill="18"></span>
+                </div>
+              </li>
+              <li>
+                <span>MINT.SH</span>
+                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="91" aria-label="Mint shell 91%">
+                  <span data-fill="91"></span>
+                </div>
+              </li>
+            </ul>
+            <p class="win-status">Ready. Clippy is hiding under the Start menu.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tui" id="mint">
+        <div class="tui__frame">
+          <header class="tui__chrome">
+            <span>mint@claymint:~/gallery</span>
+            <span>zsh · 80x24</span>
+          </header>
+          <div class="tui__screen" id="terminal" tabindex="0" role="region" aria-label="Terminal mint">
+            <pre id="terminal-log"></pre>
+            <form class="tui__form" id="tui-form">
+              <label for="tui-input">$</label>
+              <input id="tui-input" name="cmd" autocomplete="off" spellcheck="false" aria-label="Lệnh terminal" />
+            </form>
+          </div>
+          <p class="tui__hint">Thử: <code>help</code>, <code>ls</code>, <code>mint solitude</code>, <code>enroll</code>, <code>whoami</code></p>
+        </div>
+      </section>
+
+      <section class="trashy" id="stories">
+        <marquee class="trashy__marquee" scrollamount="7">
+          ★ WELCOME TO MY GUESTBOOK ★ under construction since 1998 ★ best viewed in Netscape ★
+          ClayMint visitor #<span data-hit-counter>000000</span> ★ SIGN THE WALL ★
+        </marquee>
+        <div class="trashy__banner">
+          <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="88" height="31" alt="" />
+          <h2>WHAT OUR STUDENTS SAY!!!!!</h2>
+          <img src="https://media.giphy.com/media/3o7qDEq2bMbcbPRQ2c/giphy.gif" width="88" height="31" alt="" />
+        </div>
+        <p class="blink">NEW NEW NEW — 100% TRUE TESTIMONIALS (no refunds)</p>
+        <div class="guestbook">
+          <article>
+            <h3>~*Jessica Wang*~</h3>
+            <p>LearnHub helped me transition from marketing to tech!!! The community is so supportive :)</p>
+            <p class="sig">Software Developer · 2004-06-12 · &lt;3</p>
+          </article>
+          <article>
+            <h3>xX_David_Xx</h3>
+            <p>The UI/UX course got me a job in 3 months. Also the mint terminal is illegal in 12 states.</p>
+            <p class="sig">UX Designer · MIDI rap playing</p>
+          </article>
+          <article>
+            <h3>Maria G.</h3>
+            <p>Best investment. Python by day, Solitude NFT by night. Clippy graded my homework.</p>
+            <p class="sig">Data Analyst · hit counter go brrr</p>
+          </article>
+        </div>
+        <p class="construction">
+          <span aria-hidden="true">🚧</span> THIS SECTION IS TRASHY ON PURPOSE <span aria-hidden="true">🚧</span>
+        </p>
+      </section>
+
+      <section class="enroll" id="enroll">
+        <div class="enroll__clay">
+          <p class="eyebrow">Ready to start?</p>
+          <h2>Ghi danh 7 ngày miễn phí</h2>
+          <p>Không cần thẻ. Có thể hủy. Có thể mint. Có thể mở 40 cửa sổ Win95.</p>
+          <form class="enroll-form" id="enroll-form">
+            <label>
+              Tên học viên
+              <input name="name" required maxlength="80" autocomplete="name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required autocomplete="email" />
+            </label>
+            <label>
+              Lộ trình
+              <select name="track">
+                <option value="web">Web Development</option>
+                <option value="ux">UI/UX Mastery</option>
+                <option value="nft">NFT Curation</option>
+                <option value="cli">Terminal Aesthetics</option>
+              </select>
+            </label>
+            <button class="clay-btn clay-btn--primary" type="submit">Start Free Trial</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>ClayMint Atelier · mashup UI/UX Pro Max · không phải sản phẩm tài chính.</p>
+      <p>
+        Style stack: claymorphism · NFT gallery · Win95 · TUI · trashy · scribble.
+        <a href="https://github.com/tranminhquan564/tranminhquan564">Repo</a>
+      </p>
+    </footer>
+
+    <div class="taskbar" role="navigation" aria-label="Thanh Start Windows 95">
+      <button type="button" class="start-btn" id="start-btn" aria-expanded="false" aria-controls="start-menu">
+        Start
+      </button>
+      <div class="taskbar__tabs">
+        <a href="#courses">courses.dll</a>
+        <a href="#exhibition">gallery.sys</a>
+        <a href="#mint">mint.sh</a>
+      </div>
+      <time id="clock" datetime="">12:00</time>
+    </div>
+
+    <div class="start-menu" id="start-menu" hidden>
+      <p>ClayMint OS</p>
+      <div class="start-menu__links">
+        <a href="#courses">Programs \\ Courses</a>
+        <a href="#exhibition">Programs \\ Exhibition</a>
+        <a href="#progress">Programs \\ Progress</a>
+        <a href="#mint">MS-DOS Prompt</a>
+        <a href="#enroll">Shut Down… (enroll)</a>
+      </div>
+    </div>
+
+    <dialog class="win-dialog" id="enroll-dialog" aria-labelledby="enroll-dialog-title">
+      <div class="win-title">
+        <span id="enroll-dialog-title">enrollment.success</span>
+        <button type="button" data-close-dialog aria-label="Đóng">X</button>
+      </div>
+      <div class="win-body">
+        <p id="enroll-dialog-body">You did it.</p>
+        <form method="dialog">
+          <button class="win-ok" value="ok">OK</button>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="./assets/app.js" type="module"></script>
+  </body>
+</html>

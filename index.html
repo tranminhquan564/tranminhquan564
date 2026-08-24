@@ -5,396 +5,295 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="ClayMint Atelier — học viện giáo dục vui nhộn kết hợp phòng trưng bày NFT tối giản, Windows 95, TUI, trashy web và scribble UI."
+      content="AMBATUKAM Protocol 0 — hệ điều hành meme cá nhân của tranminhquan564: clay crayon DAW, lightning wordmark, mixtape, voxel peace, Win95 và TUI."
     />
-    <title>ClayMint Atelier — Học viện NFT nguệch ngoạc</title>
+    <title>AMBATUKAM Protocol 0</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Fredoka:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Kalam:wght@700&family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@600;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600&family=Kalam:wght@700&family=Oswald:wght@500;700&family=Press+Start+2P&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
+    <svg class="svg-defs" aria-hidden="true" width="0" height="0">
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" />
+        <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.28 0" />
+      </filter>
+      <filter id="wobble">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" />
+      </filter>
+    </svg>
+    <div class="grain" aria-hidden="true"></div>
     <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
 
-    <div class="desktop-icons" aria-hidden="true">
-      <button class="desktop-icon" type="button" data-open-window="progress">
-        <span class="desktop-icon__glyph"></span>
-        <span>My Progress</span>
-      </button>
-      <button class="desktop-icon" type="button" data-open-window="recycle">
-        <span class="desktop-icon__glyph desktop-icon__glyph--trash"></span>
-        <span>Recycle</span>
-      </button>
-      <button class="desktop-icon" type="button" data-scroll="#mint">
-        <span class="desktop-icon__glyph desktop-icon__glyph--term"></span>
-        <span>mint.sh</span>
-      </button>
-    </div>
-
-    <header class="site-header">
-      <a class="brand" href="#top">
-        <span class="brand__clay">ClayMint</span>
-        <span class="brand__serif">Atelier</span>
+    <header class="topbar">
+      <a class="wordmark" href="#top">
+        <span class="wordmark__bolt" aria-hidden="true"></span>
+        <span class="wordmark__text">AMBATUKAM</span>
+        <span class="wordmark__sub">Protocol 0</span>
       </a>
-      <nav class="clay-nav" aria-label="Mục chính">
-        <a href="#courses">Khóa học</a>
-        <a href="#exhibition">Triển lãm</a>
-        <a href="#artists">Nghệ sĩ</a>
-        <a href="#progress">Tiến độ</a>
-        <a href="#mint">Mint</a>
-        <a href="#enroll">Ghi danh</a>
+      <nav class="topbar__nav" aria-label="Mục chính">
+        <a href="#tape">Mixtape</a>
+        <a href="#daw">Piano roll</a>
+        <a href="#peace">La Peace</a>
+        <a href="#desk">Desktop</a>
+        <a href="#shell">Shell</a>
+        <a href="#wall">Wall</a>
       </nav>
-      <a class="clay-btn clay-btn--accent" href="#enroll">Học miễn phí</a>
+      <a class="clay-btn" href="https://github.com/tranminhquan564/tranminhquan564">Repo</a>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
-        <div class="hero__blobs" aria-hidden="true"></div>
-        <p class="hero__kicker">New: AI-Powered Learning × Current Exhibition</p>
-        <h1>
-          Học bất cứ lúc nào.
-          <em>Mint bất cứ thứ gì.</em>
-        </h1>
+        <div class="hero__sky" aria-hidden="true"></div>
+        <svg class="hero__bolt" viewBox="0 0 120 220" aria-hidden="true">
+          <path
+            d="M68 4 L22 98 H58 L34 216 L108 84 H66 Z"
+            fill="#f4f7ff"
+            stroke="#d9deff"
+            stroke-width="3"
+          />
+        </svg>
+        <p class="hero__kicker">personal meme operating system · layer 0 · no financial product</p>
+        <h1>AMBATUKAM</h1>
+        <p class="hero__layer">PROTOCOL 0</p>
         <p class="hero__lede">
-          Nền tảng giáo dục claymorphism gặp phòng tranh NFT tối giản — rồi
-          vô tình mở nhầm Windows 95, terminal mint, guestbook 1998 và sổ
-          phác thảo nguệch ngoạc.
+          Remix README: huyền thoại code từ thời khủng long, mơ binary, pha cà phê bằng compiler —
+          thật ra là sinh viên đang cố qua môn. Bố cục một desktop; mỗi cửa sổ một meme template.
         </p>
-        <div class="hero__actions">
-          <a class="clay-btn clay-btn--primary" href="#courses">Xem khóa học</a>
-          <a class="ghost-btn" href="#exhibition">Vào triển lãm</a>
-        </div>
-        <ul class="hero__stats">
-          <li><strong>10K+</strong> khóa học</li>
-          <li><strong>2M+</strong> học viên</li>
-          <li><strong>42</strong> tác phẩm đang mint</li>
-          <li><strong>95</strong> cửa sổ chưa đóng</li>
-        </ul>
-      </section>
-
-      <section class="courses" id="courses">
-        <header class="section-head">
-          <p class="eyebrow">Popular Courses</p>
-          <h2>Catalog clay — bóp vào là học</h2>
-          <p>Thẻ 3D mềm, viền dày, bóng đôi. Đúng bài claymorphism cho giáo dục.</p>
-        </header>
-        <div class="course-grid">
-          <article class="clay-card">
-            <div class="clay-card__art clay-card__art--code" aria-hidden="true"></div>
-            <p class="clay-card__meta">48 bài · 24h · 12.5K</p>
-            <h3>Web Development Bootcamp</h3>
-            <p>Sarah Chen dạy bạn dựng trang này mà không cần Clippy.</p>
-            <div class="clay-card__foot">
-              <span class="stars" aria-label="4.9 trên 5">4.9</span>
-              <button class="clay-btn clay-btn--small" type="button" data-enroll="web">Tiếp tục học</button>
+        <div class="hero__row">
+          <figure class="clay-bust visor" aria-label="Mascot visor clay">
+            <div class="clay-bust__head">
+              <span class="clay-bust__eye"></span>
+              <span class="clay-bust__eye"></span>
+              <span class="clay-bust__visor">4691</span>
             </div>
-            <label class="sr-only" for="progress-web">Tiến độ Web</label>
-            <progress id="progress-web" max="100" value="65">65%</progress>
-          </article>
-          <article class="clay-card">
-            <div class="clay-card__art clay-card__art--ux" aria-hidden="true"></div>
-            <p class="clay-card__meta">36 bài · 18h · 8.2K</p>
-            <h3>UI/UX Design Mastery</h3>
-            <p>Mike Johnson: 79 style searchable. Đừng dùng AI purple.</p>
-            <div class="clay-card__foot">
-              <span class="stars" aria-label="4.8 trên 5">4.8</span>
-              <button class="clay-btn clay-btn--small" type="button" data-enroll="ux">Xem giáo trình</button>
+            <figcaption>visor build</figcaption>
+          </figure>
+          <figure class="clay-bust tux" aria-label="Mascot tuxedo clay">
+            <div class="clay-bust__head clay-bust__head--tux">
+              <span class="clay-bust__eye clay-bust__eye--calm"></span>
+              <span class="clay-bust__eye clay-bust__eye--calm"></span>
+              <span class="clay-bust__bow"></span>
             </div>
-            <progress max="100" value="42">42%</progress>
-          </article>
-          <article class="clay-card">
-            <div class="clay-card__art clay-card__art--nft" aria-hidden="true"></div>
-            <p class="clay-card__meta">52 bài · 30h · 15.3K</p>
-            <h3>NFT Curation 101</h3>
-            <p>Emily Davis: Digital Renaissance, không phải JPEG cá vàng.</p>
-            <div class="clay-card__foot">
-              <span class="stars" aria-label="4.9 trên 5">4.9</span>
-              <button class="clay-btn clay-btn--small" type="button" data-enroll="nft">Vào studio</button>
-            </div>
-            <progress max="100" value="18">18%</progress>
-          </article>
-          <article class="clay-card">
-            <div class="clay-card__art clay-card__art--cli" aria-hidden="true"></div>
-            <p class="clay-card__meta">42 bài · 22h · 9.8K</p>
-            <h3>Terminal Aesthetics</h3>
-            <p>Alex Kim: mint bằng CLI, đọc log như thơ.</p>
-            <div class="clay-card__foot">
-              <span class="stars" aria-label="4.7 trên 5">4.7</span>
-              <button class="clay-btn clay-btn--small" type="button" data-enroll="cli">Mở shell</button>
-            </div>
-            <progress max="100" value="91">91%</progress>
-          </article>
-        </div>
-      </section>
-
-      <section class="exhibition" id="exhibition">
-        <p class="exhibition__label">Current Exhibition</p>
-        <h2>Digital Renaissance</h2>
-        <p class="exhibition__dek">
-          Bộ sưu tập chọn lọc về giao thoa công nghệ và biểu đạt. Tối giản,
-          nhiều khoảng thở, nghệ thuật đứng trước UI.
-        </p>
-        <div class="exhibition__hero-piece" aria-hidden="true">
-          <div class="nft-canvas nft-canvas--ethereal"></div>
-        </div>
-        <p class="exhibition__caption">
-          Featured · <em>Ethereal Landscapes</em> · Marina Chen · Reserve 15 ETH
-        </p>
-        <div class="collection">
-          <header class="collection__head">
-            <h3>Available Works</h3>
-            <a class="text-link" href="#mint">Mint từ terminal</a>
-          </header>
-          <ul class="collection__grid">
-            <li>
-              <figure>
-                <div class="nft-canvas nft-canvas--solitude" aria-hidden="true"></div>
-                <figcaption>
-                  <strong>Solitude</strong>
-                  <span>Marina Chen · 8.5 ETH</span>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <div class="nft-canvas nft-canvas--urban" aria-hidden="true"></div>
-                <figcaption>
-                  <strong>Urban Dreams</strong>
-                  <span>James Wright · 5.2 ETH</span>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <div class="nft-canvas nft-canvas--meta" aria-hidden="true"></div>
-                <figcaption>
-                  <strong>Metamorphosis</strong>
-                  <span>Sofia Laurent · 12 ETH</span>
-                </figcaption>
-              </figure>
-            </li>
-            <li>
-              <figure>
-                <div class="nft-canvas nft-canvas--bloom" aria-hidden="true"></div>
-                <figcaption>
-                  <strong>Digital Bloom</strong>
-                  <span>Alex Kim · 6.8 ETH</span>
-                </figcaption>
-              </figure>
-            </li>
+            <figcaption>board meeting</figcaption>
+          </figure>
+          <ul class="hero__stats">
+            <li><strong>01001001</strong> I know how to center a div</li>
+            <li><strong>7</strong> ngôn ngữ flex, 1 sự thật</li>
+            <li><strong>0</strong> cầu muốn bán cho bạn</li>
           </ul>
         </div>
       </section>
 
-      <section class="sketch" id="artists">
-        <svg class="sketch__scribble" aria-hidden="true" viewBox="0 0 200 40">
-          <path d="M4 28 C 40 4, 80 36, 120 12 S 180 32, 196 10" fill="none" stroke="#ff4d4d" stroke-width="3" />
-        </svg>
-        <p class="sketch__label">// nghệ sĩ được dán băng keo</p>
-        <h2>Curated creators (vẽ nguệch)</h2>
-        <div class="sketch-grid">
-          <article class="sketch-card sketch-card--a">
-            <div class="tape" aria-hidden="true"></div>
-            <div class="avatar-doodle" aria-hidden="true">MC</div>
-            <h3>Marina Chen</h3>
-            <p>24 works · landscape mềm như đất sét</p>
-            <p class="note">đừng xóa nét chì này !!</p>
-          </article>
-          <article class="sketch-card sketch-card--b">
-            <div class="tape tape--blue" aria-hidden="true"></div>
-            <div class="avatar-doodle" aria-hidden="true">JW</div>
-            <h3>James Wright</h3>
-            <p>18 works · city glitch, vẫn thanh lịch</p>
-          </article>
-          <article class="sketch-card sketch-card--c">
-            <div class="pushpin" aria-hidden="true"></div>
-            <div class="avatar-doodle" aria-hidden="true">SL</div>
-            <h3>Sofia Laurent</h3>
-            <p>32 works · biến hình, mực đỏ</p>
-          </article>
-          <article class="sketch-card sketch-card--d">
-            <div class="tape" aria-hidden="true"></div>
-            <div class="avatar-doodle" aria-hidden="true">AK</div>
-            <h3>Alex Kim</h3>
-            <p>15 works · bloom + CLI poetry</p>
-          </article>
+      <section class="tape" id="tape">
+        <div class="tape__cover">
+          <p class="tape__ftc">FTC</p>
+          <h2 class="drip">HEAT COMMIT</h2>
+          <div class="truck" aria-hidden="true">
+            <div class="truck__shoe"></div>
+            <div class="truck__wheel truck__wheel--a"></div>
+            <div class="truck__wheel truck__wheel--b"></div>
+            <div class="truck__wheel truck__wheel--c"></div>
+            <div class="truck__wheel truck__wheel--d"></div>
+            <div class="truck__flame"></div>
+          </div>
+          <p class="tape__tag">explicit commits · mixtape 01</p>
+          <aside class="advisory">
+            <strong>PARENTAL</strong>
+            <span>ADVISORY</span>
+            <em>EXPLICIT COMMITS</em>
+          </aside>
+        </div>
+        <ol class="tracklist">
+          <li><span>01</span> Tôi là huyền thoại code vĩ đại nhất mọi thời đại</li>
+          <li><span>02</span> Coding since the dinosaurs</li>
+          <li><span>03</span> Je suis le créateur du langage que personne n'a vu</li>
+          <li><span>04</span> Ich träume in Binärcode jede Nacht</li>
+          <li><span>05</span> Me encanta pretender que entiendo</li>
+          <li><span>06</span> Я могу писать код с закрытыми глазами</li>
+        </ol>
+      </section>
+
+      <section class="daw-wrap" id="daw">
+        <header class="daw-wrap__head">
+          <p class="eyebrow">crayon clay DAW</p>
+          <h2>Piano roll — stack được sequenc</h2>
+          <p>Nét chì sáp, thanh clay xanh, lưới navy. Bấm nốt để ghi vào shell.</p>
+        </header>
+        <div class="daw" role="group" aria-label="Piano roll crayon">
+          <div class="daw__keys" aria-hidden="true">
+            <span>C5</span><span>A4</span><span>E4</span><span>C4</span>
+            <span>A3</span><span>E3</span><span>C3</span><span>A2</span>
+            <span>E2</span><span>C2</span>
+          </div>
+          <div class="daw__grid">
+            <button class="note" type="button" style="--r: 1; --c: 2; --s: 4" data-line="flex: dinosaurs">E5</button>
+            <button class="note" type="button" style="--r: 2; --c: 5; --s: 3" data-line="flex: center-div">D5</button>
+            <button class="note" type="button" style="--r: 3; --c: 8; --s: 5" data-line="flex: binary-dreams">A#4</button>
+            <button class="note" type="button" style="--r: 4; --c: 3; --s: 6" data-line="flex: pentagon.exe">A4</button>
+            <button class="note" type="button" style="--r: 5; --c: 9; --s: 4" data-line="flex: coffee-compiler">E4</button>
+            <button class="note" type="button" style="--r: 6; --c: 1; --s: 5" data-line="flex: tuesday-only-app">A#3</button>
+            <button class="note" type="button" style="--r: 7; --c: 6; --s: 7" data-line="status: student">E3</button>
+            <button class="note" type="button" style="--r: 8; --c: 4; --s: 4" data-line="truth: no-bridge">A#2</button>
+            <button class="note" type="button" style="--r: 9; --c: 10; --s: 5" data-line="peace: la-peace">E2</button>
+          </div>
         </div>
       </section>
 
-      <section class="win95" id="progress">
-        <h2 class="win95__sr">Progress tracking demo</h2>
-        <div class="win-window" id="window-progress">
-          <div class="win-title">
-            <span>progress.exe — Student Dashboard</span>
-            <div class="win-title__btns">
-              <button type="button" aria-label="Minimize">_</button>
-              <button type="button" aria-label="Maximize">□</button>
-              <button type="button" class="win-title__close" data-close-window aria-label="Đóng">X</button>
+      <section class="peace" id="peace">
+        <div class="peace__top">
+          <div class="clay-sage" aria-hidden="true">
+            <span class="clay-sage__halo"></span>
+            <span class="clay-sage__face"></span>
+          </div>
+          <p class="peace__caption">It's La Peace 🤍❤️</p>
+        </div>
+        <div class="mc" aria-label="Minecraft HUD giả">
+          <div class="mc__world"></div>
+          <div class="mc__hud">
+            <span class="mc__hearts" aria-hidden="true"></span>
+            <span class="mc__food" aria-hidden="true"></span>
+            <div class="hotbar">
+              <b title="potion"></b>
+              <b class="is-sel" title="pickaxe"></b>
+              <b></b><b></b><b></b><b></b><b></b><b></b><b></b>
             </div>
           </div>
-          <menu class="win-menu">
-            <li><u>F</u>ile</li>
-            <li><u>E</u>dit</li>
-            <li><u>V</u>iew</li>
-            <li><u>H</u>elp</li>
-          </menu>
-          <div class="win-body">
-            <p>C:\STUDENTS\YOU\COURSES</p>
-            <ul class="win-progress">
-              <li>
-                <span>WEBBOOT.CAM</span>
-                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="65" aria-label="Web bootcamp 65%">
-                  <span data-fill="65"></span>
-                </div>
-              </li>
-              <li>
-                <span>UXMASTER.SYS</span>
-                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="42" aria-label="UX mastery 42%">
-                  <span data-fill="42"></span>
-                </div>
-              </li>
-              <li>
-                <span>NFT101.EXE</span>
-                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18" aria-label="NFT 101 18%">
-                  <span data-fill="18"></span>
-                </div>
-              </li>
-              <li>
-                <span>MINT.SH</span>
-                <div class="win-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="91" aria-label="Mint shell 91%">
-                  <span data-fill="91"></span>
-                </div>
-              </li>
-            </ul>
-            <p class="win-status">Ready. Clippy is hiding under the Start menu.</p>
-          </div>
         </div>
       </section>
 
-      <section class="tui" id="mint">
+      <section class="desk" id="desk">
+        <div class="win" id="window-files">
+          <div class="win__title">
+            <span>readme.dir — C:\AMBATUKAM\FLEX</span>
+            <button type="button" data-close-window aria-label="Đóng">X</button>
+          </div>
+          <div class="win__body">
+            <p>Things I can do (allegedly)</p>
+            <ul class="win-files">
+              <li>quebrarsistemas.bat</li>
+              <li>pentagon.lnk</li>
+              <li>cafe.com</li>
+              <li>tuesday-only.exe</li>
+              <li>error-stare.worldrecord</li>
+              <li>student.txt</li>
+            </ul>
+            <div class="win-bars">
+              <p>Ego.exe</p>
+              <div class="win-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" aria-label="Ego 91%">
+                <span data-fill="91"></span>
+              </div>
+              <p>Homework.dll</p>
+              <div class="win-bar" role="progressbar" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100" aria-label="Homework 37%">
+                <span data-fill="37"></span>
+              </div>
+              <p>LaPeace.sys</p>
+              <div class="win-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="La Peace 100%">
+                <span data-fill="100"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <article class="meme-card">
+          <p class="meme-card__top">ME DEBUGGING AT 3AM</p>
+          <div class="meme-card__art" aria-hidden="true"></div>
+          <p class="meme-card__bot">THE BUG: a missing semicolon</p>
+        </article>
+      </section>
+
+      <section class="tui" id="shell">
         <div class="tui__frame">
           <header class="tui__chrome">
-            <span>mint@claymint:~/gallery</span>
-            <span>zsh · 80x24</span>
+            <span>amba@protocol0:~/flex</span>
+            <span>zsh · 80×24</span>
           </header>
-          <div class="tui__screen" id="terminal" tabindex="0" role="region" aria-label="Terminal mint">
+          <div class="tui__screen" id="terminal" tabindex="0" role="region" aria-label="Shell protocol">
             <pre id="terminal-log"></pre>
             <form class="tui__form" id="tui-form">
               <label for="tui-input">$</label>
-              <input id="tui-input" name="cmd" autocomplete="off" spellcheck="false" aria-label="Lệnh terminal" />
+              <input id="tui-input" name="cmd" autocomplete="off" spellcheck="false" aria-label="Lệnh shell" />
             </form>
           </div>
-          <p class="tui__hint">Thử: <code>help</code>, <code>ls</code>, <code>mint solitude</code>, <code>enroll</code>, <code>whoami</code></p>
+          <p class="tui__hint">
+            Thử <code>help</code> <code>whoami</code> <code>flex</code> <code>peace</code> <code>roll</code> <code>clear</code>
+          </p>
         </div>
       </section>
 
-      <section class="trashy" id="stories">
-        <marquee class="trashy__marquee" scrollamount="7">
-          ★ WELCOME TO MY GUESTBOOK ★ under construction since 1998 ★ best viewed in Netscape ★
-          ClayMint visitor #<span data-hit-counter>000000</span> ★ SIGN THE WALL ★
-        </marquee>
-        <div class="trashy__banner">
-          <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="88" height="31" alt="" />
-          <h2>WHAT OUR STUDENTS SAY!!!!!</h2>
-          <img src="https://media.giphy.com/media/3o7qDEq2bMbcbPRQ2c/giphy.gif" width="88" height="31" alt="" />
-        </div>
-        <p class="blink">NEW NEW NEW — 100% TRUE TESTIMONIALS (no refunds)</p>
+      <section class="wall" id="wall">
+        <p class="wall__blink">NEW TEMPLATE DROP — caption your own legend</p>
         <div class="guestbook">
           <article>
-            <h3>~*Jessica Wang*~</h3>
-            <p>LearnHub helped me transition from marketing to tech!!! The community is so supportive :)</p>
-            <p class="sig">Software Developer · 2004-06-12 · &lt;3</p>
+            <h3>top text / bottom text</h3>
+            <p>WHEN THE README SAYS HACK THE PENTAGON</p>
+            <p>BUT YOU'RE STUDYING FOR FINALS</p>
           </article>
           <article>
-            <h3>xX_David_Xx</h3>
-            <p>The UI/UX course got me a job in 3 months. Also the mint terminal is illegal in 12 states.</p>
-            <p class="sig">UX Designer · MIDI rap playing</p>
+            <h3>expanding brain</h3>
+            <p>center a div → dream in binary → sell a bridge → admit you're a student</p>
           </article>
           <article>
-            <h3>Maria G.</h3>
-            <p>Best investment. Python by day, Solitude NFT by night. Clippy graded my homework.</p>
-            <p class="sig">Data Analyst · hit counter go brrr</p>
+            <h3>two buttons</h3>
+            <p>Fix the bug · Open another Win95 window</p>
           </article>
         </div>
-        <p class="construction">
-          <span aria-hidden="true">🚧</span> THIS SECTION IS TRASHY ON PURPOSE <span aria-hidden="true">🚧</span>
-        </p>
-      </section>
-
-      <section class="enroll" id="enroll">
-        <div class="enroll__clay">
-          <p class="eyebrow">Ready to start?</p>
-          <h2>Ghi danh 7 ngày miễn phí</h2>
-          <p>Không cần thẻ. Có thể hủy. Có thể mint. Có thể mở 40 cửa sổ Win95.</p>
-          <form class="enroll-form" id="enroll-form">
-            <label>
-              Tên học viên
-              <input name="name" required maxlength="80" autocomplete="name" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" required autocomplete="email" />
-            </label>
-            <label>
-              Lộ trình
-              <select name="track">
-                <option value="web">Web Development</option>
-                <option value="ux">UI/UX Mastery</option>
-                <option value="nft">NFT Curation</option>
-                <option value="cli">Terminal Aesthetics</option>
-              </select>
-            </label>
-            <button class="clay-btn clay-btn--primary" type="submit">Start Free Trial</button>
-          </form>
-        </div>
+        <form class="sign" id="sign-form">
+          <h2>Ký vào wall</h2>
+          <p>Không phải ghi danh khóa học. Chỉ là guestbook protocol.</p>
+          <label>
+            Handle
+            <input name="name" required maxlength="40" autocomplete="nickname" />
+          </label>
+          <label>
+            Caption
+            <input name="caption" required maxlength="120" placeholder="It's La Peace" />
+          </label>
+          <button class="clay-btn" type="submit">Drop caption</button>
+        </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>ClayMint Atelier · mashup UI/UX Pro Max · không phải sản phẩm tài chính.</p>
-      <p>
-        Style stack: claymorphism · NFT gallery · Win95 · TUI · trashy · scribble.
-        <a href="https://github.com/tranminhquan564/tranminhquan564">Repo</a>
-      </p>
+      <p>tranminhquan564 · Protocol 0 · clay crayon · lightning type · mixtape · voxel · Win95 · TUI.</p>
+      <p>Visual language lấy từ DAW chì sáp, wordmark sét, cover sneaker-truck, split meme, HUD khối — không clone copy demo edu/NFT.</p>
     </footer>
 
-    <div class="taskbar" role="navigation" aria-label="Thanh Start Windows 95">
-      <button type="button" class="start-btn" id="start-btn" aria-expanded="false" aria-controls="start-menu">
-        Start
-      </button>
+    <div class="taskbar" role="navigation" aria-label="Thanh Start">
+      <button type="button" class="start-btn" id="start-btn" aria-expanded="false" aria-controls="start-menu">Start</button>
       <div class="taskbar__tabs">
-        <a href="#courses">courses.dll</a>
-        <a href="#exhibition">gallery.sys</a>
-        <a href="#mint">mint.sh</a>
+        <a href="#daw">roll.daw</a>
+        <a href="#tape">heat.wav</a>
+        <a href="#shell">amba.sh</a>
       </div>
       <time id="clock" datetime="">12:00</time>
     </div>
 
     <div class="start-menu" id="start-menu" hidden>
-      <p>ClayMint OS</p>
+      <p>AMBA OS</p>
       <div class="start-menu__links">
-        <a href="#courses">Programs \\ Courses</a>
-        <a href="#exhibition">Programs \\ Exhibition</a>
-        <a href="#progress">Programs \\ Progress</a>
-        <a href="#mint">MS-DOS Prompt</a>
-        <a href="#enroll">Shut Down… (enroll)</a>
+        <a href="#tape">Programs \\ Heat Commit</a>
+        <a href="#daw">Programs \\ Piano Roll</a>
+        <a href="#peace">Programs \\ La Peace</a>
+        <a href="#desk">Programs \\ Desktop</a>
+        <a href="#shell">MS-DOS Prompt</a>
+        <a href="#wall">Shut Down… (wall)</a>
       </div>
     </div>
 
-    <dialog class="win-dialog" id="enroll-dialog" aria-labelledby="enroll-dialog-title">
-      <div class="win-title">
-        <span id="enroll-dialog-title">enrollment.success</span>
+    <dialog class="win-dialog" id="sign-dialog" aria-labelledby="sign-dialog-title">
+      <div class="win__title">
+        <span id="sign-dialog-title">wall.sys</span>
         <button type="button" data-close-dialog aria-label="Đóng">X</button>
       </div>
-      <div class="win-body">
-        <p id="enroll-dialog-body">You did it.</p>
-        <form method="dialog">
-          <button class="win-ok" value="ok">OK</button>
-        </form>
+      <div class="win__body">
+        <p id="sign-dialog-body">Caption dropped.</p>
+        <form method="dialog"><button class="win-ok" value="ok">OK</button></form>
       </div>
     </dialog>
 

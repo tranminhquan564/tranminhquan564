@@ -171,5 +171,5 @@ Mina datorer gillar mig inte - de gör alltid vad jag inte ber dem att göra!
 </div>
 
 <p align="center">
-  <a href="https://tranminhquan564.github.io/tranminhquan564/"><strong>ClayMint Atelier</strong> — GitHub Pages</a>
+  <a href="https://tranminhquan564.github.io/tranminhquan564/"><strong>AMBATUKAM Protocol 0</strong> — GitHub Pages</a>
 </p>

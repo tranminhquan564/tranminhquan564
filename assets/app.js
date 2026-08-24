@@ -4,23 +4,17 @@ const inputEl = document.querySelector("#tui-input");
 const clockEl = document.querySelector("#clock");
 const startBtn = document.querySelector("#start-btn");
 const startMenu = document.querySelector("#start-menu");
-const enrollForm = document.querySelector("#enroll-form");
-const enrollDialog = document.querySelector("#enroll-dialog");
-const enrollDialogBody = document.querySelector("#enroll-dialog-body");
-const progressWindow = document.querySelector("#window-progress");
-
-const works = {
-  solitude: { artist: "Marina Chen", price: "8.5 ETH" },
-  "urban dreams": { artist: "James Wright", price: "5.2 ETH" },
-  metamorphosis: { artist: "Sofia Laurent", price: "12 ETH" },
-  "digital bloom": { artist: "Alex Kim", price: "6.8 ETH" },
-};
+const signForm = document.querySelector("#sign-form");
+const signDialog = document.querySelector("#sign-dialog");
+const signDialogBody = document.querySelector("#sign-dialog-body");
+const filesWindow = document.querySelector("#window-files");
 
 const bootLines = [
-  "ClayMint OS [Version 95.01]",
-  "(c) 1998-2026 Atelier Corp. No rights reserved.",
+  "AMBATUKAM PROTOCOL 0",
+  "(c) 1998-2026 student runtime. No tokens. No L2.",
   "",
-  "Type help for the curriculum. Type mint <work> to mint.",
+  "whoami is a student. flex is a bit.",
+  "Type help. Click piano-roll notes to log bars.",
   "",
 ];
 
@@ -36,22 +30,7 @@ function printBoot() {
   if (!logEl) {
     return;
   }
-  logEl.textContent = bootLines.join("\n");
-}
-
-function mintWork(name) {
-  const key = name.trim().toLowerCase();
-  const work = works[key];
-  if (!work) {
-    printLine(`error: unknown work "${name}"`);
-    printLine("available: solitude | urban dreams | metamorphosis | digital bloom");
-    return;
-  }
-  const token = String(Math.floor(Math.random() * 900) + 42).padStart(3, "0");
-  printLine(`minting "${name}" by ${work.artist}...`);
-  printLine(`reserve ${work.price}`);
-  printLine(`tx 0xAMBA${token} confirmed`);
-  printLine(`token #${token} dropped into /gallery/you`);
+  logEl.textContent = `${bootLines.join("\n")}\n`;
 }
 
 function runCommand(raw) {
@@ -60,34 +39,38 @@ function runCommand(raw) {
   if (!line) {
     return;
   }
-  const [cmd, ...rest] = line.split(/\s+/u);
-  const arg = rest.join(" ");
+  const [cmd] = line.split(/\s+/u);
   switch (cmd.toLowerCase()) {
     case "help":
-      printLine("help     show this lesson plan");
-      printLine("ls       list curated works");
-      printLine("mint     mint <work>");
-      printLine("enroll   jump to free trial");
-      printLine("whoami   identity crisis");
-      printLine("clear    wipe the CRT");
-      break;
-    case "ls":
-      printLine("solitude.nft");
-      printLine("urban-dreams.nft");
-      printLine("metamorphosis.nft");
-      printLine("digital-bloom.nft");
-      printLine("progress.exe");
-      printLine("guestbook.html");
-      break;
-    case "mint":
-      mintWork(arg || "solitude");
-      break;
-    case "enroll":
-      printLine("opening enrollment.wizard...");
-      document.querySelector("#enroll")?.scrollIntoView({ behavior: "smooth" });
+      printLine("help    commands");
+      printLine("whoami  the punchline");
+      printLine("flex    README energy");
+      printLine("peace   la peace");
+      printLine("roll    open the DAW");
+      printLine("ls      alleged binaries");
+      printLine("clear   wipe CRT");
       break;
     case "whoami":
-      printLine("student@claymint — also a collector, also Clippy");
+      printLine("tranminhquan564");
+      printLine("role: student pretending to be a runtime legend");
+      printLine("stack: HTML, CSS, jokes, exams");
+      break;
+    case "flex":
+      printLine("coded since dinosaurs");
+      printLine("dreams in binary");
+      printLine("cannot sell you a bridge");
+      break;
+    case "peace":
+      printLine("It's La Peace.");
+      document.querySelector("#peace")?.scrollIntoView({ behavior: "smooth" });
+      break;
+    case "roll":
+      document.querySelector("#daw")?.scrollIntoView({ behavior: "smooth" });
+      printLine("sequencer armed");
+      break;
+    case "ls":
+      printLine("quebrarsistemas.bat  pentagon.lnk  cafe.com");
+      printLine("tuesday-only.exe     student.txt   heat.commit");
       break;
     case "clear":
       printBoot();
@@ -97,7 +80,7 @@ function runCommand(raw) {
       break;
     default:
       printLine(`command not found: ${cmd}`);
-      printLine("hint: this shell grades effort, not syntax. try help");
+      printLine("this shell grades bit, not syntax. try help");
       break;
   }
 }
@@ -128,32 +111,27 @@ function fillBars() {
   }
 }
 
-function bumpHits() {
-  const key = "claymint-hits";
-  const next = Number(localStorage.getItem(key) || "384721") + 1;
-  localStorage.setItem(key, String(next));
-  for (const el of document.querySelectorAll("[data-hit-counter]")) {
-    el.textContent = String(next).padStart(6, "0");
-  }
-}
-
 printBoot();
 tickClock();
 setInterval(tickClock, 30_000);
-bumpHits();
 
 formEl?.addEventListener("submit", (event) => {
   event.preventDefault();
-  const value = inputEl?.value ?? "";
-  runCommand(value);
+  runCommand(inputEl?.value ?? "");
   if (inputEl) {
     inputEl.value = "";
   }
 });
 
+for (const note of document.querySelectorAll(".note")) {
+  note.addEventListener("click", () => {
+    note.classList.toggle("is-on");
+    printLine(`note ${note.textContent?.trim()} // ${note.dataset.line}`);
+  });
+}
+
 startBtn?.addEventListener("click", () => {
-  const open = startBtn.getAttribute("aria-expanded") !== "true";
-  setStartOpen(open);
+  setStartOpen(startBtn.getAttribute("aria-expanded") !== "true");
 });
 
 document.addEventListener("click", (event) => {
@@ -169,65 +147,38 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setStartOpen(false);
-    enrollDialog?.close();
+    signDialog?.close();
   }
 });
 
-startMenu?.addEventListener("click", () => {
-  setStartOpen(false);
-});
+startMenu?.addEventListener("click", () => setStartOpen(false));
 
-enrollForm?.addEventListener("submit", (event) => {
+signForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  const data = new FormData(enrollForm);
-  const name = String(data.get("name") || "bạn");
-  const track = String(data.get("track") || "web");
-  if (enrollDialogBody) {
-    enrollDialogBody.textContent = `${name} đã ghi danh lộ trình ${track}. Clippy sẽ gửi homework lúc 3:14 AM.`;
+  const data = new FormData(signForm);
+  const name = String(data.get("name") || "anon");
+  const caption = String(data.get("caption") || "La Peace");
+  if (signDialogBody) {
+    signDialogBody.textContent = `${name} dropped: “${caption}”. It's La Peace.`;
   }
-  enrollDialog?.showModal();
+  signDialog?.showModal();
+  signForm.reset();
 });
 
 document.querySelector("[data-close-dialog]")?.addEventListener("click", () => {
-  enrollDialog?.close();
+  signDialog?.close();
 });
-
-for (const btn of document.querySelectorAll("[data-enroll]")) {
-  btn.addEventListener("click", () => {
-    const track = btn.getAttribute("data-enroll");
-    const select = enrollForm?.querySelector("select[name='track']");
-    if (select && track) {
-      select.value = track;
-    }
-    document.querySelector("#enroll")?.scrollIntoView({ behavior: "smooth" });
-  });
-}
 
 document.querySelector("[data-close-window]")?.addEventListener("click", () => {
-  if (progressWindow) {
-    progressWindow.hidden = true;
+  if (filesWindow) {
+    filesWindow.hidden = true;
   }
-});
-
-document.querySelector("[data-open-window='progress']")?.addEventListener("click", () => {
-  if (progressWindow) {
-    progressWindow.hidden = false;
-  }
-  document.querySelector("#progress")?.scrollIntoView({ behavior: "smooth" });
-});
-
-document.querySelector("[data-open-window='recycle']")?.addEventListener("click", () => {
-  document.querySelector("#stories")?.scrollIntoView({ behavior: "smooth" });
-});
-
-document.querySelector("[data-scroll='#mint']")?.addEventListener("click", () => {
-  document.querySelector("#mint")?.scrollIntoView({ behavior: "smooth" });
 });
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (reduceMotion) {
   fillBars();
-} else if ("IntersectionObserver" in window && progressWindow) {
+} else if ("IntersectionObserver" in window && filesWindow) {
   const observer = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
@@ -239,7 +190,7 @@ if (reduceMotion) {
     },
     { threshold: 0.3 },
   );
-  observer.observe(progressWindow);
+  observer.observe(filesWindow);
 } else {
   fillBars();
 }

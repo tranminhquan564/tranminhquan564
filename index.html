@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="AMBATUKAM Protocol 0 — hệ điều hành meme cá nhân của tranminhquan564: clay crayon DAW, lightning wordmark, mixtape, voxel peace, Win95 và TUI."
+      content="quan.sys — Peace Kernel. Portfolio mashup crayon-clay DAW, Win95, TUI và meme template cho Tran Minh Quan."
     />
-    <title>AMBATUKAM Protocol 0</title>
+    <title>quan.sys — Peace Kernel</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@600;700&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600&family=Kalam:wght@700&family=Oswald:wght@500;700&family=Press+Start+2P&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;600;700&family=Kalam:wght@700&family=Nunito:wght@800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <svg class="svg-defs" aria-hidden="true" width="0" height="0">
+    <svg class="svg-defs" aria-hidden="true" focusable="false">
+      <filter id="crayon" x="-20%" y="-20%" width="140%" height="140%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="4.5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
       <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" />
-        <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.28 0" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" />
+        <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0" />
       </filter>
-      <filter id="wobble">
-        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="2" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" />
-      </filter>
+      <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+        <rect width="6" height="6" fill="transparent" />
+        <path d="M0 0 H6" stroke="rgb(255 255 255 / 0.22)" stroke-width="1.2" />
+      </pattern>
     </svg>
     <div class="grain" aria-hidden="true"></div>
     <a class="skip-link" href="#main">Bỏ qua điều hướng</a>
@@ -34,66 +38,129 @@
     <header class="topbar">
       <a class="wordmark" href="#top">
         <span class="wordmark__bolt" aria-hidden="true"></span>
-        <span class="wordmark__text">AMBATUKAM</span>
-        <span class="wordmark__sub">Protocol 0</span>
+        <span class="wordmark__text">QUAN.SYS</span>
+        <span class="wordmark__sub">peace kernel</span>
       </a>
       <nav class="topbar__nav" aria-label="Mục chính">
-        <a href="#tape">Mixtape</a>
-        <a href="#daw">Piano roll</a>
-        <a href="#peace">La Peace</a>
-        <a href="#desk">Desktop</a>
+        <a href="#roll">Roll</a>
+        <a href="#templates">Templates</a>
+        <a href="#heat">Heat</a>
+        <a href="#peace">Peace</a>
+        <a href="#desk">Desk</a>
         <a href="#shell">Shell</a>
-        <a href="#wall">Wall</a>
       </nav>
-      <a class="clay-btn" href="https://github.com/tranminhquan564/tranminhquan564">Repo</a>
+      <a class="clay-btn" href="https://github.com/tranminhquan564">GitHub</a>
     </header>
 
     <main id="main">
       <section class="hero" id="top">
         <div class="hero__sky" aria-hidden="true"></div>
-        <svg class="hero__bolt" viewBox="0 0 120 220" aria-hidden="true">
-          <path
-            d="M68 4 L22 98 H58 L34 216 L108 84 H66 Z"
-            fill="#f4f7ff"
-            stroke="#d9deff"
-            stroke-width="3"
-          />
-        </svg>
-        <p class="hero__kicker">personal meme operating system · layer 0 · no financial product</p>
-        <h1>AMBATUKAM</h1>
-        <p class="hero__layer">PROTOCOL 0</p>
+        <p class="hero__kicker">student runtime · crayon claymore · no demo copy</p>
+        <h1>
+          QUAN
+          <span class="hero__crack" aria-hidden="true"></span>
+        </h1>
+        <p class="hero__layer">PEACE KERNEL</p>
         <p class="hero__lede">
-          Remix README: huyền thoại code từ thời khủng long, mơ binary, pha cà phê bằng compiler —
-          thật ra là sinh viên đang cố qua môn. Bố cục một desktop; mỗi cửa sổ một meme template.
+          Không clone khóa học hay gallery mint. Đây là desktop cá nhân: nốt chì sáp như piano roll,
+          thẻ clay 3D, cửa sổ Win95, shell git, và meme template viết lại bằng code.
         </p>
         <div class="hero__row">
-          <figure class="clay-bust visor" aria-label="Mascot visor clay">
-            <div class="clay-bust__head">
+          <figure class="clay-bust">
+            <div class="clay-bust__head" aria-hidden="true">
               <span class="clay-bust__eye"></span>
               <span class="clay-bust__eye"></span>
-              <span class="clay-bust__visor">4691</span>
+              <span class="clay-bust__visor">build 4697</span>
             </div>
-            <figcaption>visor build</figcaption>
+            <figcaption>clay visor — mascot runtime</figcaption>
           </figure>
-          <figure class="clay-bust tux" aria-label="Mascot tuxedo clay">
-            <div class="clay-bust__head clay-bust__head--tux">
-              <span class="clay-bust__eye clay-bust__eye--calm"></span>
-              <span class="clay-bust__eye clay-bust__eye--calm"></span>
-              <span class="clay-bust__bow"></span>
-            </div>
-            <figcaption>board meeting</figcaption>
+          <figure class="split-card" aria-label="Meme dual-tone">
+            <p>when the types finally match</p>
+            <div class="split-card__face" aria-hidden="true"></div>
           </figure>
           <ul class="hero__stats">
-            <li><strong>01001001</strong> I know how to center a div</li>
-            <li><strong>7</strong> ngôn ngữ flex, 1 sự thật</li>
-            <li><strong>0</strong> cầu muốn bán cho bạn</li>
+            <li><strong>HTML/CSS</strong> layout như collab DAW</li>
+            <li><strong>Git</strong> commit như drop beat</li>
+            <li><strong>Meme</strong> template, không copypasta demo</li>
           </ul>
         </div>
       </section>
 
-      <section class="tape" id="tape">
+      <section class="daw-wrap" id="roll">
+        <header>
+          <p class="eyebrow">claymore crayon · piano roll</p>
+          <h2>Skill sequencer — bấm nốt để ghi commit</h2>
+          <p>
+            Texture chì sáp, lưới navy, thanh lime clay. Mỗi bar là một kỹ năng, không phải khóa học
+            mẫu.
+          </p>
+        </header>
+        <div class="daw" role="group" aria-label="Piano roll crayon clay">
+          <div class="daw__keys" aria-hidden="true">
+            <span>C5</span><span>A4</span><span>E4</span><span>C4</span>
+            <span>A3</span><span>E3</span><span>C3</span><span>A2</span>
+            <span>E2</span><span>C2</span>
+          </div>
+          <div class="daw__grid">
+            <div class="playhead" aria-hidden="true"></div>
+            <button class="note" type="button" style="--r: 1; --c: 2; --s: 4" data-cmd="feat: semantic html">E5</button>
+            <button class="note" type="button" style="--r: 2; --c: 5; --s: 3" data-cmd="style: crayon tokens">D5</button>
+            <button class="note" type="button" style="--r: 3; --c: 8; --s: 5" data-cmd="fix: contrast 4.5">A#4</button>
+            <button class="note" type="button" style="--r: 4; --c: 3; --s: 6" data-cmd="chore: win95 window">A4</button>
+            <button class="note" type="button" style="--r: 5; --c: 9; --s: 4" data-cmd="feat: tui git">E4</button>
+            <button class="note" type="button" style="--r: 6; --c: 1; --s: 5" data-cmd="docs: meme templates">A#3</button>
+            <button class="note" type="button" style="--r: 7; --c: 6; --s: 7" data-cmd="refactor: cascade layers">E3</button>
+            <button class="note" type="button" style="--r: 8; --c: 4; --s: 4" data-cmd="test: reduced-motion">A#2</button>
+            <button class="note" type="button" style="--r: 9; --c: 10; --s: 5" data-cmd="release: peace kernel">E2</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery" id="templates">
+        <header class="gallery__head">
+          <p class="gallery__kicker">curated templates</p>
+          <h2>Meme as interface</h2>
+          <p>Bố cục gallery tối giản — nội dung là format meme viết cho dev, không phải NFT mẫu.</p>
+        </header>
+        <ul class="gallery__grid">
+          <li>
+            <article class="impact">
+              <p>nobody:</p>
+              <div class="impact__art impact__art--a" aria-hidden="true"></div>
+              <p>git commit -m "fix" lúc 03:14</p>
+            </article>
+          </li>
+          <li>
+            <article class="drake">
+              <div>
+                <span class="drake__no">Copy nguyên Stack Overflow</span>
+                <span class="drake__yes">Đọc docs, rồi mới copy có citation</span>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="brain">
+              <ol>
+                <li>console.log</li>
+                <li>debugger</li>
+                <li>rubber duck</li>
+                <li>đọc nguyên error</li>
+              </ol>
+            </article>
+          </li>
+          <li>
+            <article class="two-btn">
+              <p>Deadline tonight</p>
+              <button type="button" disabled>Sleep</button>
+              <button type="button">One more refactor</button>
+            </article>
+          </li>
+        </ul>
+      </section>
+
+      <section class="tape" id="heat">
         <div class="tape__cover">
-          <p class="tape__ftc">FTC</p>
+          <p class="tape__ftc">SHIP</p>
           <h2 class="drip">HEAT COMMIT</h2>
           <div class="truck" aria-hidden="true">
             <div class="truck__shoe"></div>
@@ -103,47 +170,21 @@
             <div class="truck__wheel truck__wheel--d"></div>
             <div class="truck__flame"></div>
           </div>
-          <p class="tape__tag">explicit commits · mixtape 01</p>
+          <p class="tape__tag">velocity mixtape · Friday deploy optional</p>
           <aside class="advisory">
-            <strong>PARENTAL</strong>
+            <strong>RUNTIME</strong>
             <span>ADVISORY</span>
             <em>EXPLICIT COMMITS</em>
           </aside>
         </div>
         <ol class="tracklist">
-          <li><span>01</span> Tôi là huyền thoại code vĩ đại nhất mọi thời đại</li>
-          <li><span>02</span> Coding since the dinosaurs</li>
-          <li><span>03</span> Je suis le créateur du langage que personne n'a vu</li>
-          <li><span>04</span> Ich träume in Binärcode jede Nacht</li>
-          <li><span>05</span> Me encanta pretender que entiendo</li>
-          <li><span>06</span> Я могу писать код с закрытыми глазами</li>
+          <li><span>01</span> feat: first pixel that looks intentional</li>
+          <li><span>02</span> fix: the bug that only exists on Tuesday</li>
+          <li><span>03</span> chore: close 14 Win95 windows</li>
+          <li><span>04</span> docs: how I center a div (this time)</li>
+          <li><span>05</span> refactor: cascade layers, fewer !important</li>
+          <li><span>06</span> release: it's giving merge-conflict-resolved</li>
         </ol>
-      </section>
-
-      <section class="daw-wrap" id="daw">
-        <header class="daw-wrap__head">
-          <p class="eyebrow">crayon clay DAW</p>
-          <h2>Piano roll — stack được sequenc</h2>
-          <p>Nét chì sáp, thanh clay xanh, lưới navy. Bấm nốt để ghi vào shell.</p>
-        </header>
-        <div class="daw" role="group" aria-label="Piano roll crayon">
-          <div class="daw__keys" aria-hidden="true">
-            <span>C5</span><span>A4</span><span>E4</span><span>C4</span>
-            <span>A3</span><span>E3</span><span>C3</span><span>A2</span>
-            <span>E2</span><span>C2</span>
-          </div>
-          <div class="daw__grid">
-            <button class="note" type="button" style="--r: 1; --c: 2; --s: 4" data-line="flex: dinosaurs">E5</button>
-            <button class="note" type="button" style="--r: 2; --c: 5; --s: 3" data-line="flex: center-div">D5</button>
-            <button class="note" type="button" style="--r: 3; --c: 8; --s: 5" data-line="flex: binary-dreams">A#4</button>
-            <button class="note" type="button" style="--r: 4; --c: 3; --s: 6" data-line="flex: pentagon.exe">A4</button>
-            <button class="note" type="button" style="--r: 5; --c: 9; --s: 4" data-line="flex: coffee-compiler">E4</button>
-            <button class="note" type="button" style="--r: 6; --c: 1; --s: 5" data-line="flex: tuesday-only-app">A#3</button>
-            <button class="note" type="button" style="--r: 7; --c: 6; --s: 7" data-line="status: student">E3</button>
-            <button class="note" type="button" style="--r: 8; --c: 4; --s: 4" data-line="truth: no-bridge">A#2</button>
-            <button class="note" type="button" style="--r: 9; --c: 10; --s: 5" data-line="peace: la-peace">E2</button>
-          </div>
-        </div>
       </section>
 
       <section class="peace" id="peace">
@@ -152,16 +193,16 @@
             <span class="clay-sage__halo"></span>
             <span class="clay-sage__face"></span>
           </div>
-          <p class="peace__caption">It's La Peace 🤍❤️</p>
+          <p class="peace__caption">It's La Peace — conflict resolved</p>
         </div>
-        <div class="mc" aria-label="Minecraft HUD giả">
+        <div class="mc" aria-label="Voxel HUD">
           <div class="mc__world"></div>
           <div class="mc__hud">
-            <span class="mc__hearts" aria-hidden="true"></span>
-            <span class="mc__food" aria-hidden="true"></span>
+            <span class="mc__hearts"></span>
+            <span class="mc__food"></span>
             <div class="hotbar">
-              <b title="potion"></b>
-              <b class="is-sel" title="pickaxe"></b>
+              <b title="docs"></b>
+              <b class="is-sel" title="editor"></b>
               <b></b><b></b><b></b><b></b><b></b><b></b><b></b>
             </div>
           </div>
@@ -171,125 +212,124 @@
       <section class="desk" id="desk">
         <div class="win" id="window-files">
           <div class="win__title">
-            <span>readme.dir — C:\AMBATUKAM\FLEX</span>
-            <button type="button" data-close-window aria-label="Đóng">X</button>
+            <span>explorer.exe — C:\QUAN\SRC</span>
+            <button type="button" data-close-window aria-label="Đóng cửa sổ">X</button>
           </div>
           <div class="win__body">
-            <p>Things I can do (allegedly)</p>
+            <p>Working tree (clean-ish)</p>
             <ul class="win-files">
-              <li>quebrarsistemas.bat</li>
-              <li>pentagon.lnk</li>
-              <li>cafe.com</li>
-              <li>tuesday-only.exe</li>
-              <li>error-stare.worldrecord</li>
-              <li>student.txt</li>
+              <li>index.html</li>
+              <li>styles.css</li>
+              <li>app.js</li>
+              <li>README.md</li>
+              <li>peace.kernel</li>
+              <li>todo.never</li>
             </ul>
-            <div class="win-bars">
-              <p>Ego.exe</p>
-              <div class="win-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100" aria-label="Ego 91%">
-                <span data-fill="91"></span>
-              </div>
-              <p>Homework.dll</p>
-              <div class="win-bar" role="progressbar" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100" aria-label="Homework 37%">
-                <span data-fill="37"></span>
-              </div>
-              <p>LaPeace.sys</p>
-              <div class="win-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="La Peace 100%">
-                <span data-fill="100"></span>
-              </div>
+            <p>Compile.exe</p>
+            <div class="win-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Compile 78%">
+              <span data-fill="78"></span>
+            </div>
+            <p>Homework.dll</p>
+            <div class="win-bar" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" aria-label="Homework 41%">
+              <span data-fill="41"></span>
+            </div>
+            <p>Peace.sys</p>
+            <div class="win-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Peace 100%">
+              <span data-fill="100"></span>
             </div>
           </div>
         </div>
-        <article class="meme-card">
-          <p class="meme-card__top">ME DEBUGGING AT 3AM</p>
-          <div class="meme-card__art" aria-hidden="true"></div>
-          <p class="meme-card__bot">THE BUG: a missing semicolon</p>
+        <article class="impact impact--side">
+          <p>me explaining the bug</p>
+          <div class="impact__art impact__art--b" aria-hidden="true"></div>
+          <p>the bug: a missing semicolon</p>
         </article>
       </section>
 
       <section class="tui" id="shell">
         <div class="tui__frame">
           <header class="tui__chrome">
-            <span>amba@protocol0:~/flex</span>
+            <span>quan@peace-kernel:~/src</span>
             <span>zsh · 80×24</span>
           </header>
-          <div class="tui__screen" id="terminal" tabindex="0" role="region" aria-label="Shell protocol">
+          <div class="tui__screen" id="terminal" tabindex="0" role="region" aria-label="Git shell">
             <pre id="terminal-log"></pre>
-            <form class="tui__form" id="tui-form">
+            <form class="tui__form" id="tui-form" action="#" method="post">
               <label for="tui-input">$</label>
-              <input id="tui-input" name="cmd" autocomplete="off" spellcheck="false" aria-label="Lệnh shell" />
+              <input id="tui-input" name="cmd" autocomplete="off" spellcheck="false" />
             </form>
           </div>
           <p class="tui__hint">
-            Thử <code>help</code> <code>whoami</code> <code>flex</code> <code>peace</code> <code>roll</code> <code>clear</code>
+            Thử <code>help</code> <code>whoami</code> <code>log</code> <code>commit</code> <code>peace</code> <code>clear</code>
           </p>
         </div>
       </section>
 
       <section class="wall" id="wall">
-        <p class="wall__blink">NEW TEMPLATE DROP — caption your own legend</p>
+        <p class="wall__blink">caption drop — template of the week</p>
         <div class="guestbook">
           <article>
-            <h3>top text / bottom text</h3>
-            <p>WHEN THE README SAYS HACK THE PENTAGON</p>
-            <p>BUT YOU'RE STUDYING FOR FINALS</p>
-          </article>
-          <article>
-            <h3>expanding brain</h3>
-            <p>center a div → dream in binary → sell a bridge → admit you're a student</p>
+            <h3>top / bottom</h3>
+            <p>WHEN THE LINTER IS GREEN</p>
+            <p>BUT PROD IS ON FIRE</p>
           </article>
           <article>
             <h3>two buttons</h3>
-            <p>Fix the bug · Open another Win95 window</p>
+            <p>Write tests · Push and pray</p>
+          </article>
+          <article>
+            <h3>it's giving</h3>
+            <p>La Peace after rebase --onto main</p>
           </article>
         </div>
-        <form class="sign" id="sign-form">
-          <h2>Ký vào wall</h2>
-          <p>Không phải ghi danh khóa học. Chỉ là guestbook protocol.</p>
-          <label>
-            Handle
-            <input name="name" required maxlength="40" autocomplete="nickname" />
-          </label>
-          <label>
-            Caption
-            <input name="caption" required maxlength="120" placeholder="It's La Peace" />
-          </label>
-          <button class="clay-btn" type="submit">Drop caption</button>
+        <form class="sign" id="sign-form" action="#" method="post">
+          <fieldset>
+            <legend>Ký wall (local only)</legend>
+            <label for="handle">Handle</label>
+            <input id="handle" name="name" required maxlength="40" autocomplete="nickname" />
+            <p class="hint" id="handle-hint">Tên ngắn, không cần email.</p>
+            <label for="caption">Caption</label>
+            <input id="caption" name="caption" required maxlength="120" aria-describedby="caption-hint" />
+            <p class="hint" id="caption-hint">Một dòng meme. Lưu trên máy bạn.</p>
+            <button class="clay-btn" type="submit">Drop caption</button>
+          </fieldset>
         </form>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>tranminhquan564 · Protocol 0 · clay crayon · lightning type · mixtape · voxel · Win95 · TUI.</p>
-      <p>Visual language lấy từ DAW chì sáp, wordmark sét, cover sneaker-truck, split meme, HUD khối — không clone copy demo edu/NFT.</p>
+      <p>tranminhquan564 · quan.sys · crayon claymore · gallery templates · Win95 · TUI.</p>
+      <p>Style lấy từ DAW chì sáp, wordmark sét, mixtape, HUD khối — không lấy nội dung demo edu/NFT.</p>
     </footer>
 
     <div class="taskbar" role="navigation" aria-label="Thanh Start">
-      <button type="button" class="start-btn" id="start-btn" aria-expanded="false" aria-controls="start-menu">Start</button>
+      <button type="button" class="start-btn" id="start-btn" aria-expanded="false" aria-controls="start-menu">
+        Start
+      </button>
       <div class="taskbar__tabs">
-        <a href="#daw">roll.daw</a>
-        <a href="#tape">heat.wav</a>
-        <a href="#shell">amba.sh</a>
+        <a href="#roll">roll.daw</a>
+        <a href="#heat">heat.log</a>
+        <a href="#shell">quan.sh</a>
       </div>
       <time id="clock" datetime="">12:00</time>
     </div>
 
     <div class="start-menu" id="start-menu" hidden>
-      <p>AMBA OS</p>
+      <p>QUAN.SYS</p>
       <div class="start-menu__links">
-        <a href="#tape">Programs \\ Heat Commit</a>
-        <a href="#daw">Programs \\ Piano Roll</a>
+        <a href="#roll">Programs \\ Piano Roll</a>
+        <a href="#templates">Programs \\ Templates</a>
+        <a href="#heat">Programs \\ Heat Commit</a>
         <a href="#peace">Programs \\ La Peace</a>
-        <a href="#desk">Programs \\ Desktop</a>
+        <a href="#desk">Programs \\ Explorer</a>
         <a href="#shell">MS-DOS Prompt</a>
-        <a href="#wall">Shut Down… (wall)</a>
       </div>
     </div>
 
-    <dialog class="win-dialog" id="sign-dialog" aria-labelledby="sign-dialog-title">
+    <dialog class="win-dialog" id="sign-dialog" closedby="any" aria-labelledby="sign-dialog-title">
       <div class="win__title">
         <span id="sign-dialog-title">wall.sys</span>
-        <button type="button" data-close-dialog aria-label="Đóng">X</button>
+        <form method="dialog"><button type="submit" aria-label="Đóng">X</button></form>
       </div>
       <div class="win__body">
         <p id="sign-dialog-body">Caption dropped.</p>

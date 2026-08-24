@@ -10,11 +10,11 @@ const signDialogBody = document.querySelector("#sign-dialog-body");
 const filesWindow = document.querySelector("#window-files");
 
 const bootLines = [
-  "AMBATUKAM PROTOCOL 0",
-  "(c) 1998-2026 student runtime. No tokens. No L2.",
+  "quan.sys peace kernel",
+  "(c) student runtime — commits, not tokens.",
   "",
-  "whoami is a student. flex is a bit.",
-  "Type help. Click piano-roll notes to log bars.",
+  "whoami is a student. heat is a changelog.",
+  "Type help. Click piano-roll notes to stage bars.",
   "",
 ];
 
@@ -39,38 +39,39 @@ function runCommand(raw) {
   if (!line) {
     return;
   }
-  const [cmd] = line.split(/\s+/u);
+  const [cmd, ...rest] = line.split(/\s+/u);
   switch (cmd.toLowerCase()) {
     case "help":
-      printLine("help    commands");
-      printLine("whoami  the punchline");
-      printLine("flex    README energy");
-      printLine("peace   la peace");
-      printLine("roll    open the DAW");
-      printLine("ls      alleged binaries");
-      printLine("clear   wipe CRT");
+      printLine("help     commands");
+      printLine("whoami   student runtime");
+      printLine("log      heat commit mixtape");
+      printLine("commit   stage a message");
+      printLine("peace    jump to La Peace");
+      printLine("roll     open the DAW");
+      printLine("clear    wipe CRT");
       break;
     case "whoami":
       printLine("tranminhquan564");
-      printLine("role: student pretending to be a runtime legend");
-      printLine("stack: HTML, CSS, jokes, exams");
+      printLine("role: student compiling memes into UI");
+      printLine("stack: HTML, CSS, git jokes, exams");
       break;
-    case "flex":
-      printLine("coded since dinosaurs");
-      printLine("dreams in binary");
-      printLine("cannot sell you a bridge");
+    case "log":
+      printLine("01 feat: first intentional pixel");
+      printLine("04 docs: centering a div (again)");
+      printLine("06 release: merge conflict resolved");
       break;
+    case "commit": {
+      const msg = rest.join(" ") || "feat: one more refactor";
+      printLine(`[main ${Math.random().toString(16).slice(2, 9)}] ${msg}`);
+      break;
+    }
     case "peace":
       printLine("It's La Peace.");
       document.querySelector("#peace")?.scrollIntoView({ behavior: "smooth" });
       break;
     case "roll":
-      document.querySelector("#daw")?.scrollIntoView({ behavior: "smooth" });
+      document.querySelector("#roll")?.scrollIntoView({ behavior: "smooth" });
       printLine("sequencer armed");
-      break;
-    case "ls":
-      printLine("quebrarsistemas.bat  pentagon.lnk  cafe.com");
-      printLine("tuesday-only.exe     student.txt   heat.commit");
       break;
     case "clear":
       printBoot();
@@ -111,9 +112,27 @@ function fillBars() {
   }
 }
 
+function bindLightDismiss(dialog) {
+  if (!dialog || "closedBy" in dialog) {
+    return;
+  }
+  dialog.addEventListener("click", (event) => {
+    const rect = dialog.getBoundingClientRect();
+    const inside =
+      event.clientX >= rect.left &&
+      event.clientX <= rect.right &&
+      event.clientY >= rect.top &&
+      event.clientY <= rect.bottom;
+    if (!inside) {
+      dialog.close();
+    }
+  });
+}
+
 printBoot();
 tickClock();
 setInterval(tickClock, 30_000);
+bindLightDismiss(signDialog);
 
 formEl?.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -126,7 +145,7 @@ formEl?.addEventListener("submit", (event) => {
 for (const note of document.querySelectorAll(".note")) {
   note.addEventListener("click", () => {
     note.classList.toggle("is-on");
-    printLine(`note ${note.textContent?.trim()} // ${note.dataset.line}`);
+    printLine(`note ${note.textContent?.trim()} // ${note.dataset.cmd}`);
   });
 }
 
@@ -147,7 +166,6 @@ document.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setStartOpen(false);
-    signDialog?.close();
   }
 });
 
@@ -159,14 +177,10 @@ signForm?.addEventListener("submit", (event) => {
   const name = String(data.get("name") || "anon");
   const caption = String(data.get("caption") || "La Peace");
   if (signDialogBody) {
-    signDialogBody.textContent = `${name} dropped: “${caption}”. It's La Peace.`;
+    signDialogBody.textContent = `${name} dropped: “${caption}”. Local only.`;
   }
   signDialog?.showModal();
   signForm.reset();
-});
-
-document.querySelector("[data-close-dialog]")?.addEventListener("click", () => {
-  signDialog?.close();
 });
 
 document.querySelector("[data-close-window]")?.addEventListener("click", () => {
